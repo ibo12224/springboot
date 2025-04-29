@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.dao.IVendorsProductsDAO">
+	<select id="getResult" resultType="com.study.springboot.dto.VendorsProductsDTO">
+		select v.vend_name as vname,p.prod_name as pname,p.prod_price as pprice
+    	from vendors v,products p
+    	where v.vend_id=p.vend_id
+	</select>
+</mapper>

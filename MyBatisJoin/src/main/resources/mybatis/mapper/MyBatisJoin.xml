@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.dao.VendorsProductsDAO">
+	<select id="getResult" resultType="com.study.springboot.dto.VendorsProductsDTO">
+		select v.vend_name as vname,p.prod_name as pname,p.prod_price as pprice
+		from vendors v join products p
+		on v.vend_id=p.vend_id
+	</select>
+</mapper>
+
+<!-- 
+	1. sql문 뒤에 세미콜론 절대 들어가면 안 됨.
+	2. 여기서 사용한 컬럼명으로 DTO (VO)의 필드명으로 만들어야 함.
+	3. Alias (별칭/별명)을 사용하지 않으면 문제가 발생함.
+	4. ResultMap Vs. VO -> VO가 더빠르다. iBatis 개발진에서 VO를 권장함.
+ -->

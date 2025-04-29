@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %logger{36} -%msg%n
+				<!--
+					%d{패턴} yyyy : 연도, MM : 월, dd : 일, HH : 시, mm : 분, ss : 초
+					%thread : 로그를 출력할 스레드 이름
+					%logger : 로그를 발생시킨 클래스 이름 (길이제한 : 36자} 
+					-%msg : 로그 메시지
+					%n : 줄바꿈
+				 -->
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="com.study.springboot" level="debug" />
+	<!-- 해당 패키지 내에서 debug 레벨 이상 (INFO, WARN, ERROR 포함)의 로그가 출력 -->
+	
+	<root level="off">
+		<appender-ref ref="console" />
+	</root>
+	<!-- 모든 패키지의 기본 레벨을 info 레벨로 설정, 이름이 console인 출력 장치(appender)를 사용 -->
+	
+	<!-- log4j2-jdbc4 -->
+	<logger name="jdbc" level="OFF" />
+	<logger name="jdbc.sqlonly" level="OFF" />
+	<logger name="jdbc.sqltiming" level="DEBUG" />
+	<logger name="jdbc.resultset" level="OFF" />
+	<logger name="jdbc.resultsettable" level="DEBUG" />
+	<logger name="jdbc.connection" level="OFF" />
+	<!-- log4j2-jdbc4 -->
+</configuration>
