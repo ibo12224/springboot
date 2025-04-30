@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.dao.IaddrSearchDao">
+	<select id="selectMember" resultType="com.study.springboot.dto.addrSearchDto">
+		<![CDATA[
+			select * from member order by num desc
+		]]>
+	</select>
+	
+	<insert id="insertMember" parameterType="com.study.springboot.dto.addrSearchDto">
+		<![CDATA[
+			insert into member(id,passwd,name,roadAddrPart1,addrDetail,zipNo)
+			 values (#{id},#{passwd},#{name},#{roadAddrPart1},#{addrDetail},#{zipNo})
+		]]>
+	</insert>
+	
+	<update id="updateMember" parameterType="com.study.springboot.dto.addrSearchDto">
+		<![CDATA[
+			update member 
+			 set id=#{id},roadAddrPart1=#{roadAddrPart1},addrDetail=#{addrDetail},zipNo=#{zipNo}
+			 where num=#{num}
+		]]>
+	</update>
+	
+	<delete id="deleteMember" parameterType="int">
+		<![CDATA[
+			delete from member where num=#{num}
+		]]>
+	</delete>
+</mapper>
