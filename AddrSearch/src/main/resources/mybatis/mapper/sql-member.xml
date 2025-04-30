@@ -8,7 +8,12 @@
 			select * from member order by num desc
 		]]>
 	</select>
-	
+	<select id="getMember" parameterType="int"
+	resultType="com.study.springboot.dto.addrSearchDto">
+		<![CDATA[
+			select * from member where num=#{num}
+		]]>
+	</select>
 	<insert id="insertMember" parameterType="com.study.springboot.dto.addrSearchDto">
 		<![CDATA[
 			insert into member(id,passwd,name,roadAddrPart1,addrDetail,zipNo)
@@ -19,7 +24,7 @@
 	<update id="updateMember" parameterType="com.study.springboot.dto.addrSearchDto">
 		<![CDATA[
 			update member 
-			 set id=#{id},roadAddrPart1=#{roadAddrPart1},addrDetail=#{addrDetail},zipNo=#{zipNo}
+			 set roadAddrPart1=#{roadAddrPart1},addrDetail=#{addrDetail},zipNo=#{zipNo}
 			 where num=#{num}
 		]]>
 	</update>

@@ -13,4 +13,5 @@ public interface IaddrSearchDao {
 	public int insertMember(addrSearchDto dto);
 	public int updateMember(addrSearchDto dto);
 	public int deleteMember(@Param("num") int num);
+	public addrSearchDto getMember(@Param("num") int num)throws Exception;
 }

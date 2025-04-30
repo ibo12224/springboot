@@ -27,8 +27,8 @@
 				<td>${member.addrDetail}</td>
 				<td>${member.zipNo}</td>
 				<td>
-					<a href="edit.do?num=${member.num}">수정</a> /
-					<a href="delete.do?num=${member.num}">삭제</a>
+					<a href="memberUpdate?num=${member.num}">수정</a> /
+					<a href="memberDelete?num=${member.num}">삭제</a>
 				</td>
 			</tr>
 		</c:forEach>
